@@ -1,22 +1,61 @@
 body { 
-  background-color: rgb(195, 218, 221);
-  font-family: 'Comfortaa', sans-serif;
-  color: rgb(218, 4, 4);
+  background: url(https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: 'Comfortaa', helvetica; 
+  height: 100%;
+  text-align: center;
 }
 
 h1 { 
+  margin: 20px 0px;
   text-align: center;
   font-size: 3em;
-  margin: 20px 0px;
 }
 
 p { 
   text-align: center;
-  font-size: 3em;
   margin: 20px 0px;
+  font-size: 3em;
 }
 
-#middle { 
-  margin: 38vh 0px;
+ol { 
+  list-style-position: inside;
+  margin: 20px 0px;
+  text-align: center;
+  font-size: 1.7em;
 }
 
+li { 
+  font-size: 0.8em;
+  list-style-type: decimal;
+  margin: 15px 0px;
+}
+
+a { 
+  color: rgb(254, 254, 254);
+  text-decoration: none;
+}
+
+a:hover { 
+  color: rgb(255, 65, 65);
+}
+
+.name { 
+  color: red;
+}
+
+#list_title { 
+  font-size: 1.3em;
+  color: rgb(255, 65, 65);
+}
+
+img { 
+  margin: 15x; 
+  border: solid white;
+  border-radius: 50%; 
+  height: 250px;
+  width: auto; 
+  align-content: center;
+}

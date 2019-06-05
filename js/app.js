@@ -4,13 +4,18 @@
 
 
 var input = prompt("Would you like to play a game with me? Answer yes or no.");
+
+// change the user input to all uppercase then split the string into an array filled with every characters and then take the first character ot test for y or n for yes or no 
 var test = input.toUpperCase();
+test = test.split("");
+var firstLetter = test[0]; 
+
 
 // keep track of how many answer user got right
 var score = 0;
 
 // test user answer and execute the case for the corresponding answer.
-if (test === "NO" || test === "N") { 
+if (firstLetter === "N") { 
   alert("Well, you are missing out on some seriously fun");
 } else { 
   alert("Answer yes or no for each question about me. Let see if you can guess right. For each right answer, you get a different prize.")
@@ -18,8 +23,10 @@ if (test === "NO" || test === "N") {
   // repeat the process for each question
   input = prompt("Is my last name Nguyen, the most common Vietnamese' last name ever?");
   test = input.toUpperCase();
+  test = test.split("");
+  firstLetter = test[0];
 
-  if (test === "YES" || test === "Y") { 
+  if (firstLetter === "Y") { 
     score++;
     alert("Correct. The odds were in your favor though, like 80%.");
   } else { 
@@ -28,8 +35,10 @@ if (test === "NO" || test === "N") {
 
   input = prompt("Am I the sexiest person you know?");
   test = input.toUpperCase();
+  test = test.split("");
+  firstLetter = test[0];
 
-  if (test === "YES" || test === "Y") { 
+  if (firstLetter === "Y") { 
     score++;
     alert("That's right. And don't you ever forget it.");
   } else { 
@@ -37,9 +46,11 @@ if (test === "NO" || test === "N") {
   }
 
   input = prompt("Was I once the champion of the Spelling Bee in elementary school?");
-  test = input.toUpperCase(); 
+  test = input.toUpperCase();
+  test = test.split("");
+  firstLetter = test[0];
 
-  if (test === "NO" || test === "N") { 
+  if (firstLetter === "N") { 
     score++;
     alert("You are right. I was knocked out in the first round. It was indeed the saddest moment in human history.");
   } else { 
@@ -47,9 +58,11 @@ if (test === "NO" || test === "N") {
   }
 
   input = prompt("Was I once the champion of my high school's talent show?")
-  test = input.toUpperCase(); 
+  test = input.toUpperCase();
+  test = test.split("");
+  firstLetter = test[0];
 
-  if (test === "YES" || test === "Y") { 
+  if (firstLetter === "Y") { 
     score++;
     alert("That's absolutely right. I gave everyone quite a show. Every person that attended shed a tear and chanted my name.");
   } else { 
@@ -58,8 +71,10 @@ if (test === "NO" || test === "N") {
 
   input = prompt("Did I ever kill anyone?");
   test = input.toUpperCase();
+  test = test.split("");
+  firstLetter = test[0];
 
-  if (test === "YES" || test === "Y") { 
+  if (firstLetter === "Y") { 
     alert("Yep I actually did once");
     alert("Just kidding. How could I do such a thing? I am a saint.");
   } else { 

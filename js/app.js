@@ -22,7 +22,7 @@ var q1 = function (){
   } else { 
     alert("Incorrect. And also incorrect if you think I am related to a Nguyen you know.")
   }
-}
+};
 var q2 = function() {
   input = inputCheck(prompt("Am I the sexiest person you know?"));
   if (input === "Y") { 
@@ -31,7 +31,7 @@ var q2 = function() {
   } else { 
     alert("That's 100% wrong. You should get your eyes checked.");
   }
-}
+};
 var q3 = function() {
   input = inputCheck(prompt("Was I once the champion of the Spelling Bee in elementary school?"));
   if (input === "N") { 
@@ -40,7 +40,7 @@ var q3 = function() {
   } else { 
     alert("Thank you for thinking that I am smart that is incorrect. I should have won but unfortunately the competition was rigged.");
   }
-}
+};
 var q4 = function() {
   input = inputCheck(prompt("Was I once the champion of my high school's talent show?"));
   if (input === "Y") { 
@@ -49,7 +49,7 @@ var q4 = function() {
   } else { 
     alert("You are dead wrong. I was freaking awesome.");
   }
-}
+};
 var q5 = function () {
   input = inputCheck(prompt("Did I ever kill anyone?"));
   if (input === "Y") { 
@@ -59,34 +59,8 @@ var q5 = function () {
     score++;
     alert("You are right. I am the nicest person ever.");
   }
-}
-var q6
-var q7
-
-var input = inputCheck(prompt("Would you like to play a game with me? Answer yes or no."));
-
-// change the user input to all uppercase then split the string into an array filled with every characters and then take the first character ot test for y or n for yes or no 
-// var test = input.toUpperCase();
-// test = test.split("");
-// var firstLetter = test[0]; 
-
-
-// test user answer and execute the case for the corresponding answer.
-if (input === "N") { 
-  alert("Well, you are missing out on some seriously fun");
-} else { 
-  alert("Answer yes or no for each question about me. Let see if you can guess right. For each right answer, you get a different prize.")
-
-  // repeat the process for each question
-  
-
-  
-
-  
-
-  
-
-  alert("Ok, now for a more difficult question");
+};
+var q6 = function() {
 
   var guess;
   var correctPIdigits = 26;  
@@ -112,6 +86,34 @@ if (input === "N") {
   if (correct === false) { 
     alert("The answer was " + correctPIdigits + " digits. Yea, I am that good.");
   }
+
+};
+var q7;
+
+var input = inputCheck(prompt("Would you like to play a game with me? Answer yes or no."));
+
+// change the user input to all uppercase then split the string into an array filled with every characters and then take the first character ot test for y or n for yes or no 
+// var test = input.toUpperCase();
+// test = test.split("");
+// var firstLetter = test[0]; 
+
+
+// test user answer and execute the case for the corresponding answer.
+if (input === "N") { 
+  alert("Well, you are missing out on some seriously fun");
+} else { 
+  alert("Answer yes or no for each question about me. Let see if you can guess right. For each right answer, you get a different prize.")
+  
+  q1();
+  q2();
+  q3();
+  q4();
+  q5();
+
+  alert("Ok, now for a more difficult question");
+  
+  q6();
+  
   // Generate 6 random numbers ranging from 0 to 60 and store them in an array
   var randomNum = [];
   var max = 60;

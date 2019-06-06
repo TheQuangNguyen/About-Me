@@ -88,7 +88,69 @@ var q6 = function() {
   }
 
 };
-var q7;
+
+var q7 = function () {
+// Generate 6 random numbers ranging from 0 to 60 and store them in an array
+  var randomNum = [];
+  var max = 60;
+  var min = 0;
+
+  // the statement for randomly generating a number I got it from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+  for (var i = 0; i < 6; i++) { 
+    randomNum[i] = Math.floor((Math.random() * (max - min + 1)) + min);
+  }
+
+  alert("Now for the final, toughest question/challenge.")
+
+  var numChances = 6;
+  var guess;
+
+  // while loop is for iterating through the number of chances the user get. For loop is for iterating through the array that contains the 6 possible correct answer. If statement is for checking to see if any number in the array match what the user guess. 
+  while (numChances > 0) { 
+
+    guess = parseInt(prompt("Guess the one of the six numbers that appear from the fortune cookie that I just opened. You have " + numChances + " chances remaining. ***Hint - the numbers are between 0 and 60***"));
+
+    for (i=0; i < randomNum.length; i++) { 
+      if (guess === randomNum[i]){
+        alert("You got it. I could have guess it too just so you know.");
+        score++;
+        numChances = -1;
+        break;
+      }
+    }
+    numChances--;
+  }
+
+  alert("The numbers are " + randomNum[0] + ", " + randomNum[1] + ", " + randomNum[2] + ", " + randomNum[3] + ", " + randomNum[4] + ", " + randomNum[5]);
+};
+
+var scoreReport = function(score) {
+// use switch to have different result based on the score the user got
+  switch (score) { 
+  case 1:
+    alert("You got 1 correct. You get one gulp of water.");
+    break;
+  case 2:
+    alert("You got 2 correct. You get two gulps of Coca-Cola.");
+    break;
+  case 3:
+    alert("You got 3 correct. You get three handful amount of rice.");
+    break;
+  case 4: 
+    alert("You got 4 correct. You get four pieces of sour skittles.");
+    break;
+  case 5: 
+    alert("You got 5 correct. You get five broken 0.5mm pencil lead sticks");
+    break;
+  case 6: 
+    alert("You got 6 correct. You get six sheets of paper");
+    break;
+  case 7: 
+    alert("You got 7 correct. You get a very special prize. Wait for it......");
+    alert("You get a signature from me.... YAYYYYYY");
+    break;
+  }
+};
 
 var input = inputCheck(prompt("Would you like to play a game with me? Answer yes or no."));
 
@@ -113,64 +175,8 @@ if (input === "N") {
   alert("Ok, now for a more difficult question");
   
   q6();
+  q7();
   
-  // Generate 6 random numbers ranging from 0 to 60 and store them in an array
-  var randomNum = [];
-  var max = 60;
-  var min = 0;
-
-  // the statement for randomly generating a number I got it from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  for (var i = 0; i < 6; i++) { 
-    randomNum[i] = Math.floor((Math.random() * (max - min + 1)) + min);
-  }
-
-  alert("Now for the final, toughest question/challenge.")
-
-  numChances = 6;
-
-  // while loop is for iterating through the number of chances the user get. For loop is for iterating through the array that contains the 6 possible correct answer. If statement is for checking to see if any number in the array match what the user guess. 
-  while (numChances > 0) { 
-
-    guess = parseInt(prompt("Guess the one of the six numbers that appear from the fortune cookie that I just opened. You have " + numChances + " chances remaining. ***Hint - the numbers are between 0 and 60***"));
-
-    for (i=0; i < randomNum.length; i++) { 
-      if (guess == randomNum[i]){
-        alert("You got it. I could have guess it too just so you know.");
-        score++;
-        numChances = -1; 
-        break;
-      }
-    }
-    numChances--;
-  }
-
-  alert("The numbers are " + randomNum[0] + ", " + randomNum[1] + ", " + randomNum[2] + ", " + randomNum[3] + ", " + randomNum[4] + ", " + randomNum[5]);
-
   alert("Now for your prize.");
-
-  // use switch to have different result based on the score the user got
-  switch (score) { 
-    case 1:
-      alert("You got 1 correct. You get one gulp of water.");
-      break;
-    case 2:
-      alert("You got 2 correct. You get two gulps of Coca-Cola.");
-      break;
-    case 3:
-      alert("You got 3 correct. You get three handful amount of rice.");
-      break;
-    case 4: 
-      alert("You got 4 correct. You get four pieces of sour skittles.");
-      break;
-    case 5: 
-      alert("You got 5 correct. You get five broken 0.5mm pencil lead sticks");
-      break;
-    case 6: 
-      alert("You got 6 correct. You get six sheets of paper");
-      break;
-    case 7: 
-      alert("You got 7 correct. You get a very special prize. Wait for it......");
-      alert("You get a signature from me.... YAYYYYYY");
-      break;
-  }
+  scoreReport(score);
 }

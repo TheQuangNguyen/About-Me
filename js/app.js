@@ -86,13 +86,15 @@ if (firstLetter === "N") {
   var guess;
   var correctPIdigits = 26;  
   var numChances = 4;
+  var correct = false;
 
   // ask the user the question along with how many chances they have left and have messages if their guess is higher or lower than the correct answer. Then reiterate again until the user run out of chances. 
   while (numChances > 0) { 
     guess = parseInt(prompt("How many digits of PI can I memorize in my head? You now have " + numChances + " chances to guess correctly."));
-    if (guess == correctPIdigits) { 
+    if (guess === correctPIdigits) { 
       alert("Yea I know, I'm amazing for remembering that much digits. You were amazing too for guessing that right, just less amazing than me.");
       score++;
+      correct = true;
       break;
     } else if (guess > correctPIdigits) { 
       alert("The guess is too high.");
@@ -102,6 +104,9 @@ if (firstLetter === "N") {
     numChances--;
   }
 
+  if (correct === false) { 
+    alert("The answer was " + correctPIdigits + " digits. Yea, I am that good.");
+  }
   // Generate 6 random numbers ranging from 0 to 60 and store them in an array
   var randomNum = [];
   var max = 60;
@@ -151,7 +156,8 @@ if (firstLetter === "N") {
       alert("You got 4 correct. You get four pieces of sour skittles.");
       break;
     case 5: 
-      alert("You got 5 correct. You get five broken 0.5mm pencil lead sticks")
+      alert("You got 5 correct. You get five broken 0.5mm pencil lead sticks");
+      break;
     case 6: 
       alert("You got 6 correct. You get six sheets of paper");
       break;

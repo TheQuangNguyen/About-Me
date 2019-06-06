@@ -33,7 +33,7 @@ var q2 = function() {
   }
 }
 var q3 = function() {
-  input = prompt("Was I once the champion of the Spelling Bee in elementary school?");
+  input = inputCheck(prompt("Was I once the champion of the Spelling Bee in elementary school?"));
   if (input === "N") { 
     score++;
     alert("You are right. I was knocked out in the first round. It was indeed the saddest moment in human history.");
@@ -42,7 +42,7 @@ var q3 = function() {
   }
 }
 var q4 = function() {
-  input = prompt("Was I once the champion of my high school's talent show?")
+  input = inputCheck(prompt("Was I once the champion of my high school's talent show?"));
   if (input === "Y") { 
     score++;
     alert("That's absolutely right. I gave everyone quite a show. Every person that attended shed a tear and chanted my name.");
@@ -50,7 +50,16 @@ var q4 = function() {
     alert("You are dead wrong. I was freaking awesome.");
   }
 }
-var q5
+var q5 = function () {
+  input = inputCheck(prompt("Did I ever kill anyone?"));
+  if (input === "Y") { 
+    alert("Yep I actually did once");
+    alert("Just kidding. How could I do such a thing? I am a saint.");
+  } else { 
+    score++;
+    alert("You are right. I am the nicest person ever.");
+  }
+}
 var q6
 var q7
 
@@ -75,16 +84,7 @@ if (input === "N") {
 
   
 
-  input = prompt("Did I ever kill anyone?");
-
-
-  if (input === "Y") { 
-    alert("Yep I actually did once");
-    alert("Just kidding. How could I do such a thing? I am a saint.");
-  } else { 
-    score++;
-    alert("You are right. I am the nicest person ever.");
-  }
+  
 
   alert("Ok, now for a more difficult question");
 

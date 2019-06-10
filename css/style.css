@@ -1,5 +1,5 @@
 body { 
-  background: url(https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg);
+  background: #EDC7B7;
   background-size: cover;
   background-position: center;
   color: white;
@@ -8,54 +8,276 @@ body {
   text-align: center;
 }
 
-h1 { 
-  margin: 20px 0px;
+section { 
+  width: 84vw;
+  margin: auto;
+  margin-top: 60px;
+}
+/* navigation bar 
+EEE2DC
+BAB2B5
+123C69
+AC3B61
+
+*/
+
+
+/* navigation bar */
+
+nav > ul > li > a { 
+  text-decoration: none;
+}
+
+nav > ul > li { 
+  float: right;
+  color: white;
+  font-size: 1em;
+  width: auto;
+  padding: 10px 20px;
+  margin: 0px 2vw;
+}
+
+nav > ul { 
+  background:linear-gradient(45deg,#AC3B61, rgb(189, 129, 139));
+  margin-bottom: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 101;
+  border-style: outset;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px #794646;
+}
+
+/* navigation bar */
+
+/* social media bar */
+
+#social-media { 
+  /* background: blue; */
+  float: left;
+  position: fixed;
+  width: 50px;
+  height: 100%;
+  margin-top: 10vh;
+  z-index: 100;
+}
+
+#social-media > a { 
+  background: #AC3B61;
+  color: #EEE2DC;
+  width: 50px;
+  border-radius: 20%;
+  height: 40px;
+  margin: 5px;
+  padding-top: 7px;
+}
+
+#social-media > a:hover { 
+  animation: social-media 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes social-media 
+{
+  0% { 
+    width: 50px;
+  }
+  100% { 
+    width: 65px;
+  }
+}
+
+/* social media bar */
+
+/* Home Page */
+
+section > h1 { 
+  margin: 30px 0px;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 p { 
   text-align: center;
-  margin: 20px 0px;
-  font-size: 3em;
+  margin: 30px 0px;
+  font-size: 2.5em;
 }
 
-ol { 
+/* Home Page */
+
+/* Education Page */
+
+#education > p.title { 
+  margin-top: 100px;
+  font-size: 2.5em;
+}
+
+#education > div > img { 
+  float: left;
+  width: 200px;
+  height: auto;
+  margin: 10px;
+}
+
+#education > div:n-child(2) > img { 
+  height: 200px; 
+}
+
+#education { 
+  height: 100vh;
+}
+
+#education > div > .schools > li { 
+  padding: 5px 0px;
+}
+
+#education > div > .schools > li:first-child { 
+  color: #123C69;
+}
+
+#education > div > .schools { 
+  font-size: 1.3em;
+  color: white;
+  float: left;
+  width: 45vw;
+  margin: 20px 30px;
+}
+
+
+/* Education Page */
+
+
+section > #songs > ol { 
   list-style-position: inside;
   margin: 20px 0px;
   text-align: center;
   font-size: 1.7em;
 }
 
-li { 
+section > #songs > ol > li { 
   font-size: 0.8em;
   list-style-type: decimal;
   margin: 15px 0px;
 }
 
-a { 
+section > #songs > ol > li > a { 
   color: rgb(254, 254, 254);
   text-decoration: none;
 }
 
-a:hover { 
-  color: rgb(255, 65, 65);
+section > #songs > ol > li > a:hover { 
+  color: #BAB2B5;
 }
 
-.name { 
-  color: red;
+.highlight { 
+  font-size: 1em;
+  background: -webkit-linear-gradient(rgb(189, 129, 139) ,#AC3B61);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-#list_title { 
+section > #home > p { 
+  margin: 3% 0px; 
+}
+
+.title { 
   font-size: 1.3em;
-  color: rgb(255, 65, 65);
+  color: #AC3B61;
 }
 
 img { 
   margin: 15x; 
-  border: solid white;
-  border-radius: 50%; 
+  border: solid #EEE2DC;
+  border-radius: 20%; 
   height: 250px;
   width: auto; 
   align-content: center;
+}
+
+/* Making animated waves at the bottom of the page */
+section > .wave { 
+  position: absolute; 
+  width: 100%;
+  height: 143px;
+  bottom: 0;
+  left: 0;
+  background: url(/img/wave.png);
+  animation: animate 10s linear infinite;
+}
+
+section > .wave::before { 
+  content: '';
+  position: absolute; 
+  width: 100%;
+  height: 143px;
+  bottom: 0;
+  left: 0;
+  background: url(/img/wave.png);
+  opacity: 0.4;
+  animation: animate-reverse 10s linear infinite;
+}
+
+section > .wave::after { 
+  content: '';
+  position: absolute; 
+  width: 100%;
+  height: 143px;
+  bottom: 0;
+  left: 0;
+  background: url(/img/wave.png);
+  opacity: 0.4;
+  animation-delay: -5s;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate 
+{ 
+  0%
+  { 
+    background-position: 0;
+  }
+  100%
+  { 
+    background-position: 1360px;
+  }
+}
+
+@keyframes animate-reverse 
+{ 
+  0%
+  { 
+    background-position: 1360px;
+  }
+  100%
+  { 
+    background-position: 0;
+  }
+}
+
+/* Making animated waves at the bottom of the page */
+
+div#education { 
+  margin-top : 173px;
+} 
+
+/* Contact info footer */
+
+#contact > ul { 
+  background: #123C69;
+  width: 100%;
+  height: 40px;
+  margin-top: 80px;
+}
+
+#contact > ul > li { 
+  display: inline-block;
+  margin: 0px 20px auto;
+  margin-top: 15px;
+  margin-bottom: 0px; 
+  /* background: red; */
+}
+
+#contact > ul > li > a { 
+  text-decoration: none;
+  color: rgb(254, 254, 254);
 }
